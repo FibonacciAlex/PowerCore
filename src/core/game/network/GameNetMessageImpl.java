@@ -301,7 +301,7 @@ public class GameNetMessageImpl implements GameNetMessage{
 	}
 
 	@Override
-	public String readUTF8String(String utf8String) {
+	public String readUTF8String() {
 		int len = buffer.readInt();
 		if(len <= 0 ){
 			return "";

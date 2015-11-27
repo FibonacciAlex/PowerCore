@@ -2,7 +2,7 @@ package core.game.network;
 
 import java.nio.channels.Channel;
 
-import core.game.player.KPlayerSessoin;
+import core.game.player.PlayerSessoin;
 
 
 /**
@@ -22,7 +22,7 @@ public class GameChannelAttachment {
 	/**是否账号顶替登录*/
 	private boolean isOverlap;
 	
-	private KPlayerSessoin playerSession;
+	private PlayerSessoin playerSession;
 
 	public GameChannelAttachment(long playerID) {
 		super();
@@ -42,11 +42,11 @@ public class GameChannelAttachment {
 		this.isOverlap = isOverlap;
 	}
 
-	public KPlayerSessoin getPlayerSession() {
+	public PlayerSessoin getPlayerSession() {
 		return playerSession;
 	}
 
-	public void setPlayerSession(KPlayerSessoin playerSession) {
+	public void setPlayerSession(PlayerSessoin playerSession) {
 		this.playerSession = playerSession;
 	}
 

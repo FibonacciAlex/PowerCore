@@ -1,6 +1,6 @@
 package core.game.player;
 
-public class KPlayer {
+public class Player {
 	
 	
 	/*---------------------------------------*/

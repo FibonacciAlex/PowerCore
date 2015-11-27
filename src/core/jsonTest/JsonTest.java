@@ -1,5 +1,6 @@
 package core.jsonTest;
 
+import java.lang.instrument.Instrumentation;
 import java.time.LocalDateTime;
 import java.util.function.Supplier;
 
@@ -26,6 +27,11 @@ public class JsonTest {
 		
 	}
 	
+	
+	class MyAgent{
+		
+				
+	}
 
 	public interface Defaultable{
 		

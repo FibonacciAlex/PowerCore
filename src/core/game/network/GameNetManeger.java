@@ -21,6 +21,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 
+
+
+
 import org.jdom.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,6 +36,12 @@ import org.slf4j.LoggerFactory;
 
 
 
+
+
+
+import com.game.GameProtocol;
+
+import core.game.GameNetMessage;
 import core.game.KGameServerType;
 import core.game.exception.KException;
 
@@ -184,4 +193,24 @@ public final class GameNetManeger {
 		bootstrap.childGroup().shutdownGracefully();
 		
 	}
+	
+	
+	/**
+	 * 新建一个等待发送的消息
+	 * @param msgType
+	 * @param clientType
+	 * @param msgID
+	 * @return
+	 */
+	public static GameNetMessage newMessage(byte msgType, byte clientType, int msgID){
+		GameNetMessage msg = new GameNetMessageImpl(msgType, clientType, msgID);
+		return msg;
+	}
+	
+	
+	public static GameNetMessage getPingMsg(){
+		return PING_MSG.duplicate();
+	}
+	private final static GameNetMessage PING_MSG = new GameNetMessageImpl(GameNetMessage.MTYPE_PLAFORM, GameNetMessage.CTYPE_ANDROID, GameProtocol.MID_PING);
+	
 }

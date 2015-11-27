@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @author Alex
  * 2015年7月6日 下午12:27:53
  */
-public class KPlayerAccount {
+public class PlayerAccount {
 
 	//是否可以透支
 	private boolean canOverdraft;
@@ -40,7 +40,7 @@ public class KPlayerAccount {
 	 * @param historyIncomeMoney
 	 * @param historyOutcomeMoney
 	 */
-	public KPlayerAccount(boolean canOverdraft, long canOverdraftValue,
+	public PlayerAccount(boolean canOverdraft, long canOverdraftValue,
 			long totalMoney, long freezeMoney,
 			long historyIncomeMoney, long historyOutcomeMoney) {
 		super();
@@ -62,7 +62,7 @@ public class KPlayerAccount {
 	 * 构造函数
 	 * @param canOverdraft 是否可以透支
 	 */
-	public KPlayerAccount(boolean canOverdraft) {
+	public PlayerAccount(boolean canOverdraft) {
 		this(canOverdraft, 0, 0, 0, 0, 0);
 	}
 

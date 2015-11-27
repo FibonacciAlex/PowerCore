@@ -29,6 +29,10 @@ public interface GameNetMessage {
 	
 	///////////////////////////以上为消息前置内容/////////////////////////////////////
 	public final static int LENGTH_OF_HEADER = 14;
+
+	public static final byte MTYPE_PLAFORM = 0;
+
+	public static final byte CTYPE_ANDROID = 0;
 	
 	/**获取消息内容的加密方式（如base64、zip等）*/
 	byte getEncrytion();
@@ -188,14 +192,14 @@ public interface GameNetMessage {
 	<T extends MessageLite> T readProtobufData(Parser<T> parser);
 	
 	/**
-	 * KGame自定义的一种读取字符串封装方法:<br>
+	 * 自定义的一种读取字符串封装方法:<br>
 	 * {@code int len=readInt();}<br>
 	 * {@code byte[] bs=new byte[len];}<br>
 	 * {@code readBytes(bs);}<br>
 	 * 
 	 * @return UTF-8编码的字符串
 	 */
-	String readUTF8String(String utf8String);
+	String readUTF8String();
 	
 	/////////////////////////////////////////////////////////////////////////////write//////////////////////////////////////////////////////////////////////////////
 	

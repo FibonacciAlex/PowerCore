@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import core.game.GameNetMessage;
 import core.game.exception.KException;
-import core.game.player.KPlayerSessoin;
+import core.game.player.PlayerSessoin;
 import core.game.timer.GameTimeSignal;
 import core.game.timer.GameTimerTask;
 
