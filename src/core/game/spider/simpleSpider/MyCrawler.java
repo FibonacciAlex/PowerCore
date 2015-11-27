@@ -69,7 +69,7 @@ public class MyCrawler {
 			System.err.println("-----excute link get image [{}]"+url);
 			
 			//获取图片链接
-			Set<String> set = HttpTools.getImageLink(url, filter);
+			Set<String> set = HttpTools.getImageLink(url);
 			set.forEach(i -> {
 				log.debug("-----------down load image[{}]",i);
 				//下载图片
@@ -96,7 +96,7 @@ public class MyCrawler {
 	
 	public static void main(String[] args){
 		MyCrawler crawler = new MyCrawler();
-		crawler.TARGET_SITE = "163.com";
+		crawler.TARGET_SITE = "163.com/photo";
 		
 		crawler.crawling(new String[]{"http://news.163.com/photo"});
 		

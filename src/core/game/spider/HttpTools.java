@@ -266,7 +266,7 @@ public class HttpTools {
 		return HttpClients.createDefault();
 	}
 	
-	public static Set<String> getImageLink(String url, LinkFilter filter){
+	public static Set<String> getImageLink(String url){
 		Set<String> links = new HashSet<String>();
 		try {
 			
