@@ -194,7 +194,6 @@ public class KActivateCodeEnterManager {
 
 
 
-		@Override
 		public void run() {
 			//发送http 请求到激活码服务器进行获取数据
 			String sign = KActivateCodeEnterManager.signFormatMD5(serverID, playerID, roleID);

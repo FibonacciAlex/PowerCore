@@ -101,7 +101,6 @@ public class ProxoolDataSourceManagement implements DefineDataSourceManagerIF{
 		if (task == null) { // 夺得初始化权限(命中率接近100%)
 			Callable call = new Callable() { // 执行初始化的方法
 
-				@Override
 				public Object call() throws Exception {
 					initialConnectionPool(); // 初始化连接池
 					taskMap.remove(currentAliasName);
@@ -169,7 +168,6 @@ public class ProxoolDataSourceManagement implements DefineDataSourceManagerIF{
 		configConnectionPool();
 	}
 
-	@Override
 	public String getSourceName() {
 		return currentAliasName;
 	}
@@ -220,7 +218,6 @@ public class ProxoolDataSourceManagement implements DefineDataSourceManagerIF{
 		onListener();
 	}
 
-	@Override
 	public void onListener() {
 		try {
 			cpsif = ProxoolFacade.getConnectionPoolStatistics(currentAliasName);
@@ -229,7 +226,6 @@ public class ProxoolDataSourceManagement implements DefineDataSourceManagerIF{
 		}
 		new Thread(new Runnable() {
 
-			@Override
 			public void run() {
 				while (scanRunning) {
 					int activeCount = cpsif.getActiveConnectionCount();
@@ -252,7 +248,6 @@ public class ProxoolDataSourceManagement implements DefineDataSourceManagerIF{
 		}).start();
 	}
 
-	@Override
 	public Connection getConnection() {
 		try {
 			Connection conn = dataSource.getConnection();
